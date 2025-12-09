@@ -1,4 +1,8 @@
 import { Button } from '@/components/ui/button';
+
+// Importe suas imagens de produtos aqui
+// Para atualizar uma imagem, basta substituir o arquivo na pasta src/assets/produtos/
+// mantendo o mesmo nome do arquivo
 import buqueRomantico from '@/assets/buque-romantico.jpg';
 import produtoRosasBrancas from '@/assets/produto-rosas-brancas.jpg';
 import produtoGirassol from '@/assets/produto-girassol.jpg';
@@ -25,42 +29,48 @@ const products = [
 
 const Catalog = () => {
   return (
-    <section id="catalogo" className="py-20 bg-secondary/30">
+    <section id="catalogo" className="py-24 bg-secondary/30">
       <div className="container">
-        <div className="text-center mb-12">
+        {/* Section Header */}
+        <div className="text-center mb-16">
           <span className="text-rose font-medium tracking-widest text-sm uppercase">
             Nosso Catálogo
           </span>
-          <h2 className="font-heading text-3xl md:text-4xl font-medium text-foreground mt-3 mb-4">
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mt-4 mb-5">
             Produtos em Destaque
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Cada arranjo é feito com flores frescas selecionadas e muito carinho
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product, index) => (
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((product) => (
             <div
               key={product.name}
-              className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-hover transition-all duration-500"
+              className="group bg-card rounded-3xl overflow-hidden shadow-card hover:shadow-hover transition-all duration-500"
             >
+              {/* Product Image */}
               <div className="relative aspect-square overflow-hidden">
                 <img
                   src={product.image}
                   alt={product.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute top-4 left-4 bg-primary/90 text-primary-foreground px-3 py-1.5 rounded-full text-sm font-medium">
+                {/* Price Badge */}
+                <div className="absolute top-5 left-5 bg-primary/95 text-primary-foreground px-4 py-2 rounded-full text-sm font-medium shadow-lg">
                   A partir de {product.price}
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="font-heading text-xl font-medium text-foreground mb-2">
+              
+              {/* Product Info */}
+              <div className="p-7">
+                <h3 className="font-heading text-xl md:text-2xl font-medium text-foreground mb-3">
                   {product.name}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4">{product.description}</p>
-                <Button variant="outline" size="default" className="w-full" asChild>
+                <p className="text-muted-foreground text-sm md:text-base mb-5">{product.description}</p>
+                <Button variant="outline" size="lg" className="w-full" asChild>
                   <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                     Ver Catálogo no WhatsApp
                   </a>

@@ -7,7 +7,7 @@ const WHATSAPP_LINK = "https://wa.me/c/553193726771";
 const Hero = () => {
   return (
     <section id="inicio" className="relative min-h-screen hero-gradient overflow-hidden pt-20">
-      {/* Hero Image */}
+      {/* Hero Image - positioned on right side */}
       <div className="absolute inset-0 flex justify-end items-center pointer-events-none">
         <img
           src={heroImage}
@@ -17,25 +17,29 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
       </div>
 
-      {/* Content */}
-      <div className="container relative z-10 flex flex-col justify-center min-h-[calc(100vh-5rem)] py-12">
-        <div className="max-w-xl animate-fade-up">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="w-10 h-px bg-rose" />
+      {/* Content - left aligned */}
+      <div className="container relative z-10 flex flex-col justify-center min-h-[calc(100vh-5rem)] py-16 lg:py-20">
+        <div className="max-w-xl lg:max-w-2xl animate-fade-up">
+          {/* Tagline with line */}
+          <div className="flex items-center gap-4 mb-8">
+            <span className="w-12 h-px bg-rose" />
             <span className="text-rose font-medium tracking-widest text-sm uppercase">
               Floricultura Artesanal
             </span>
           </div>
 
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-tight mb-6">
+          {/* Main heading */}
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-[1.15] mb-8">
             Flores que encantam.{' '}
             <span className="italic text-forest-light">Momentos</span> que ficam na memória.
           </h1>
 
-          <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-md">
+          {/* Description */}
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10 max-w-lg">
             Arranjos exclusivos para todas as ocasiões. Feitos com amor e dedicação para transformar momentos em lembranças eternas.
           </p>
 
+          {/* CTA Button */}
           <Button variant="hero" size="xl" asChild>
             <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
               <WhatsAppIcon />
@@ -44,8 +48,8 @@ const Hero = () => {
           </Button>
         </div>
 
-        {/* Features */}
-        <div className="flex flex-wrap gap-6 md:gap-10 mt-12 pt-8 border-t border-border/50 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+        {/* Features - bottom aligned with separator */}
+        <div className="flex flex-wrap gap-8 md:gap-12 mt-16 pt-10 border-t border-border/40 animate-fade-up" style={{ animationDelay: '0.2s' }}>
           <FeatureBadge icon={<Flower2 className="w-5 h-5 text-rose" />} title="Flores Frescas" subtitle="Sempre do dia" />
           <FeatureBadge icon={<Heart className="w-5 h-5 text-rose" />} title="Feito com Amor" subtitle="Artesanal" />
           <FeatureBadge icon={<CheckCircle className="w-5 h-5 text-rose" />} title="Entrega Rápida" subtitle="No mesmo dia" />
@@ -53,8 +57,8 @@ const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
-        <div className="w-8 h-12 rounded-full border-2 border-primary/30 flex items-start justify-center p-2">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-float">
+        <div className="w-8 h-14 rounded-full border-2 border-primary/30 flex items-start justify-center p-2">
           <div className="w-1.5 h-3 bg-primary rounded-full animate-pulse-soft" />
         </div>
       </div>
@@ -64,7 +68,7 @@ const Hero = () => {
 
 const FeatureBadge = ({ icon, title, subtitle }: { icon: React.ReactNode; title: string; subtitle: string }) => (
   <div className="flex items-center gap-3">
-    <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
+    <div className="w-10 h-10 rounded-full bg-secondary/80 flex items-center justify-center">
       {icon}
     </div>
     <div>

@@ -4,15 +4,19 @@ const WHATSAPP_LINK = "https://wa.me/c/553193726771";
 
 const CTA = () => {
   return (
-    <section id="contato" className="py-20 cta-gradient">
-      <div className="container text-center">
-        <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-medium text-primary-foreground mb-6">
+    <section id="contato" className="py-24 cta-gradient">
+      <div className="container text-center max-w-3xl mx-auto">
+        {/* Heading */}
+        <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-medium text-primary-foreground mb-8 leading-tight">
           Pronto para surpreender alguém hoje?
         </h2>
-        <p className="text-primary-foreground/80 max-w-xl mx-auto mb-8 text-lg">
+        
+        {/* Description */}
+        <p className="text-primary-foreground/85 max-w-2xl mx-auto mb-10 text-lg md:text-xl leading-relaxed">
           Fale conosco e receba o catálogo completo no WhatsApp. Estamos prontos para ajudar você a criar momentos inesquecíveis.
         </p>
         
+        {/* CTA Button */}
         <Button
           variant="secondary"
           size="xl"
@@ -25,7 +29,8 @@ const CTA = () => {
           </a>
         </Button>
 
-        <p className="text-primary-foreground/60 text-sm mt-6">
+        {/* Footer text */}
+        <p className="text-primary-foreground/60 text-sm md:text-base mt-8">
           Atendimento rápido • Sem compromisso • Personalização disponível
         </p>
       </div>

@@ -20,36 +20,41 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-24 bg-background">
       <div className="container">
-        <div className="text-center mb-12">
+        {/* Section Header */}
+        <div className="text-center mb-16">
           <span className="text-rose font-medium tracking-widest text-sm uppercase">
             O que dizem nossos clientes
           </span>
-          <h2 className="font-heading text-3xl md:text-4xl font-medium text-foreground mt-3">
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mt-4">
             Depoimentos
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
+        {/* Testimonials Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial) => (
             <div
               key={testimonial.name}
-              className="bg-card rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300"
+              className="bg-card rounded-3xl p-8 shadow-card hover:shadow-hover transition-all duration-300"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center">
+              {/* User Info */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center">
                   <span className="font-heading text-lg font-semibold text-primary">
                     {testimonial.initials}
                   </span>
                 </div>
-                <h4 className="font-heading text-lg font-medium text-foreground">
+                <h4 className="font-heading text-xl font-medium text-foreground">
                   {testimonial.name}
                 </h4>
               </div>
+              
+              {/* Quote */}
               <div className="relative">
-                <Quote className="absolute -top-1 -left-1 w-6 h-6 text-rose/30" />
-                <blockquote className="text-muted-foreground italic pl-6">
+                <Quote className="absolute -top-1 -left-1 w-8 h-8 text-rose/30" />
+                <blockquote className="text-muted-foreground text-base italic pl-8 leading-relaxed">
                   "{testimonial.text}"
                 </blockquote>
               </div>
