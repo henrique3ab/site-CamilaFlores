@@ -16,19 +16,19 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm">
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <a href="#inicio" className="font-heading text-2xl md:text-3xl font-semibold text-foreground">
+        <a href="#inicio" className="font-heading text-2xl md:text-3xl font-semibold text-foreground tracking-wide">
           Camila Flores
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-10">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors tracking-wide"
             >
               {item.label}
             </a>
@@ -37,7 +37,7 @@ const Header = () => {
 
         <div className="hidden md:block">
           <Button variant="whatsapp" size="default" asChild>
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
               <WhatsAppIcon />
               WhatsApp
             </a>
